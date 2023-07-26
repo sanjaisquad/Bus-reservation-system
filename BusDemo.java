@@ -41,15 +41,36 @@ public class BusDemo {
 //            }
 //        }
 
-        System.out.println("Welcome bus reservation system..........");
-        System.out.println("CHELLO :)");
-        BusDAO bus = new BusDAO();
-        bus.displaybusfnfo();
-      // Admin ad = new Admin();
-        Booking book= new Booking();
-        BookingDAO bookingDAO=new BookingDAO();
-        bookingDAO.insert(book);
+Scanner scan = new Scanner(System.in);
+        while(true) {
+                byte option=0;
+                System.out.println("Welcome bus reservation system..........");
+                System.out.println("CHELLO :)");
+                BusDAO bus = new BusDAO();
+                bus.displaybusfnfo();
 
+                System.out.println("1-Customer");
+                System.out.println("2-Admin");
+                System.out.println("3-Exit");
+                System.out.println("Enter the choise : ");
+                option=scan.nextByte();
+                if(option==1) {
+
+                        System.out.println("................customer..................");
+                        Booking book = new Booking();
+                        BookingDAO bookingDAO = new BookingDAO();
+                        bookingDAO.insert(book);
+                } else if (option==2) {
+                        System.out.println("..................ADMIN.................");
+                        Admin ad = new Admin();
+                }
+
+                else {
+                        System.out.println("Thank you");
+                                break;}
+
+option=0;
+        }
 
     }
 }
